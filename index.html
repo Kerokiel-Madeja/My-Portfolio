@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Portfolio</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </nav>
+
+    <section class="hero" id="home">
+      <div class="geometric-bg">
+        <div class="shape circle"></div>
+        <div class="shape triangle"></div>
+        <div class="shape square"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Hi, I'm <span class="name-highlight">Kerokiel</span>
+        </h1>
+        <p class="hero-description">
+          Crafting intuitive digital experiences through
+        </p>
+        <div class="animated-tags">
+          <span class="tag">Frontend Development</span>
+          <span class="tag">UX Design</span>
+        </div>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View Work</a>
+          <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects" data-scroll>
+      <div class="container">
+        <h2 class="section-title scroll-appear">Featured Work</h2>
+        <div class="project-grid">
+          <!-- Project 1 -->
+          <article class="project-card scroll-appear delay-1">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-number">01</span>
+                <h3 class="project-title">Lorem Ipsum Dolor</h3>
+                <p class="project-excerpt">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, voluptatum.
+                </p>
+                <div class="tech-tags">
+                  <span>Lorem</span>
+                  <span>Ipsum</span>
+                  <span>Dolor</span>
+                </div>
+              </div>
+              <div class="card-back">
+                <p class="project-detail">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Quisquam, voluptatum. Lorem ipsum dolor sit amet.
+                </p>
+                <a href="#" class="project-link">Lorem ipsum →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card scroll-appear delay-2">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-number">02</span>
+                <h3 class="project-title">Sit Amet Consectetur</h3>
+                <p class="project-excerpt">
+                  Adipisicing elit lorem ipsum dolor sit amet consectetur.
+                  Quisquam, voluptatum.
+                </p>
+                <div class="tech-tags">
+                  <span>Sit</span>
+                  <span>Amet</span>
+                  <span>Consectetur</span>
+                </div>
+              </div>
+              <div class="card-back">
+                <p class="project-detail">
+                  Adipisicing elit lorem ipsum dolor sit amet consectetur.
+                  Quisquam, voluptatum. Lorem ipsum dolor sit.
+                </p>
+                <a href="#" class="project-link">Lorem ipsum →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card scroll-appear delay-3">
+            <div class="card-inner">
+              <div class="card-front">
+                <span class="project-number">03</span>
+                <h3 class="project-title">Adipisicing Elit</h3>
+                <p class="project-excerpt">
+                  Consectetur adipisicing elit lorem ipsum dolor sit amet.
+                  Quisquam, voluptatum.
+                </p>
+                <div class="tech-tags">
+                  <span>Adipisicing</span>
+                  <span>Elit</span>
+                  <span>Quisquam</span>
+                </div>
+              </div>
+              <div class="card-back">
+                <p class="project-detail">
+                  Consectetur adipisicing elit lorem ipsum dolor sit amet.
+                  Quisquam, voluptatum. Lorem ipsum dolor sit amet consectetur.
+                </p>
+                <a href="#" class="project-link">Lorem ipsum →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact" data-scroll>
+      <div class="contact-container">
+        <h2 class="section-title scroll-appear">Get in Touch</h2>
+        <div class="contact-methods">
+          <a
+            href="mailto:kielmadeja38@gmail.com"
+            class="contact-item scroll-appear delay-1"
+          >
+            <div class="icon-wrapper">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info">
+              <span class="method">Email</span>
+              <span class="detail">kielmadeja38@gmail.com</span>
+            </div>
+          </a>
+
+          <a
+            href="https://linkedin.com/in/yourprofile"
+            target="_blank"
+            class="contact-item scroll-appear delay-2"
+          >
+            <div class="icon-wrapper">
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+            <div class="contact-info">
+              <span class="method">LinkedIn</span>
+              <span class="detail">/in/yourprofile</span>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/Kerokiel-Madeja"
+            target="_blank"
+            class="contact-item scroll-appear delay-3"
+          >
+            <div class="icon-wrapper">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="contact-info">
+              <span class="method">GitHub</span>
+              <span class="detail">@Kerokiel-Madeja</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer" data-scroll>
+      <div class="footer-content">
+        <div class="footer-logo scroll-appear">&lt;CodeWithKiel/&gt;</div>
+        <div class="footer-links scroll-appear delay-1">
+          <a href="#projects" class="footer-link">Projects</a>
+          <a href="#about" class="footer-link">About me</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-social scroll-appear delay-2">
+          <a
+            href="https://github.com/Kerokiel-Madeja"
+            class="social-icon"
+            target="_blank"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" class="social-icon">
+            <i class="fab fa-codepen"></i>
+          </a>
+        </div>
+        <div class="footer-copy scroll-appear delay-3">
+          <p>
+            Crafted with <span class="highlight">♥</span> and
+            <span class="highlight">#00ff88</span>
+          </p>
+          <p>&copy; 2025 Kerokiel. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
