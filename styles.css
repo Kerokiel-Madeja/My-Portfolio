@@ -303,6 +303,7 @@ body {
   padding: 2rem;
   display: flex;
   position: absolute;
+  border-radius: 15px;
   transform: translateY(100%);
   flex-direction: column;
   background: rgba(0, 0, 0, 0.9);
