@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Add this to your existing script.js
 const scrollElements = document.querySelectorAll("[data-scroll]");
 
 const observer = new IntersectionObserver(
