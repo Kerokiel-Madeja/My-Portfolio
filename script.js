@@ -46,7 +46,7 @@ document.querySelectorAll(".scroll-appear").forEach((el) => {
   el.style.animationPlayState = "paused";
 });
 
-// Optional: Add smooth scroll behavior
+// Add smooth scroll behavior
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
