@@ -61,6 +61,10 @@ html {
   transition: all 0.3s ease;
 }
 
+/* .main {
+  display: none;
+} */
+
 /* Hero Section Styles */
 body {
   background-color: #1a1a1a;
