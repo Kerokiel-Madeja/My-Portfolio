@@ -31,7 +31,7 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.2, // Trigger when 20% of element is visible
+    threshold: 0.3, // Trigger when 20% of element is visible
   }
 );
 
@@ -45,4 +45,3 @@ document.querySelectorAll(".scroll-appear").forEach((el) => {
   el.style.opacity = "0";
   el.style.animationPlayState = "paused";
 });
-
