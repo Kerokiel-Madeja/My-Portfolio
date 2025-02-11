@@ -4,6 +4,11 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #1a1a1a;
+  font-family: "Poppins", sans-serif;
+}
+
 /* Navigation Styles */
 .navbar {
   top: 0;
@@ -66,11 +71,6 @@ html {
 } */
 
 /* Hero Section Styles */
-body {
-  background-color: #1a1a1a;
-  font-family: "Poppins", sans-serif;
-}
-
 .hero {
   height: calc(100vh - 70px);
   padding: 2rem;
@@ -586,18 +586,20 @@ body {
   }
 
   .nav-links {
-    top: 50px;
+    gap: 0;
     left: 0;
     right: 0;
-    gap: 0;
+    top: 50px;
     padding: 1rem 0;
     position: fixed;
-    clip-path: circle(0 at 90% -10%);
-    background-color: #1a1a1a;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
     transition: all 0.5s ease-out;
-    border-bottom: 1px solid #00ff88;
+    clip-path: circle(0 at 92% 0%);
+    backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(21, 21, 21, 0.75);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.125);
   }
 
   .nav-links.active {
