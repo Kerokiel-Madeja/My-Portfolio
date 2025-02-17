@@ -59,7 +59,7 @@ function animateNavItems() {
     item.style.transform = "translateX(30px)";
     item.style.animation = `fadeLeft 0.8s forwards`;
     item.style.transition = "all 0.4s cubic-bezier(0.23, 1, 0.32, 1)";
-    item.style.animationDelay = `${0.1 * index + 0.2}s`;
+    item.style.animationDelay = `${0.08 * index + 0.1}s`;
   });
 }
 
