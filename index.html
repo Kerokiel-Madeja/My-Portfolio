@@ -3,57 +3,138 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Personal Portfolio</title>
+    <title>My Portfolio</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="./assets/src/styles.css" />
+    <link rel="stylesheet" href="./css/navigation.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/projects.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
   <body>
-        <!-- Navigation -->
-    <nav class="navbar">
-      <div class="logo">Portfolio</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span class="line"></span>
-        <span class="line"></span>
-        <span class="line"></span>
-      </button>
-    </nav>
+    <header>
+      <nav class="navigation">
+        <h2 class="logo">KEROKIEL</h2>
+        <ul class="nav-links">
+          <li class="home-links"><a href="#home">Home</a></li>
+          <li class="home-links"><a href="#projects">Projects</a></li>
+          <li class="home-links"><a href="#about">About</a></li>
+          <li class="about-links"><a href="#home">Home</a></li>
+          <li class="about-links"><a href="#about">About</a></li>
+          <li class="about-links"><a href="#skills">Skills</a></li>
+        </ul>
 
-    <!-- Home Section -->
-    <div class="main">
-      <section class="hero" id="home">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            Hi, I'm <span class="name-highlight">Kerokiel</span>
-          </h1>
-          <p class="hero-description">
-            Crafting intuitive digital experiences through
-          </p>
-          <div class="animated-tags">
+        <div class="hamburger">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Home Section -->
+      <section id="home">
+        <div class="home-content">
+          <h1>Hi, I'm <span class="underline">Kerokiel</span></h1>
+          <p class="home-description">Creating Digital Solutions Through</p>
+          <div class="home-tags">
             <span class="tag">Frontend Development</span>
             <span class="tag">UX Design</span>
           </div>
-          <div class="hero-buttons">
-            <a href="#projects" class="btn btn-primary">View Work</a>
-            <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+          <button class="btn"><a href="#contact">Let's Connect</a></button>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+        <div class="about-home">
+          <img
+            src="./assets/images/MADEJA, KEROKIEL L.jpg"
+            alt="Profile picture of Kerokiel Madeja"
+          />
+          <div class="about-description">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+              inventore molestias id maiores minima a sapiente iure asperiores
+              perspiciatis, aliquid quasi aliquam provident nam vero.
+            </p>
+            <button class="btn"><a>Download CV</a></button>
+          </div>
+        </div>
+
+        <!-- Skills Section -->
+        <div class="about-skills" id="skills">
+          <div class="skills-container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+              <!-- Frontend Skills -->
+              <div class="skills">
+                <div class="skills-inner">
+                  <h3>Frontend</h3>
+                  <div class="tech-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>React.js</span>
+                    <span>Tailwind</span>
+                    <span>Bootstrap</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Backend Skills -->
+              <div class="skills">
+                <div class="skills-inner">
+                  <h3>Backend</h3>
+                  <div class="tech-tags">
+                    <span>Python</span>
+                    <span>PHP</span>
+                    <span>Node.js</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tools & Database -->
+              <div class="skills">
+                <div class="skills-inner">
+                  <h3>Tools & Database</h3>
+                  <div class="tech-tags">
+                    <span>MySQL</span>
+                    <span>GitHub</span>
+                    <span>GitLab</span>
+                    <span>Figma</span>
+                    <span>Crystal Report</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Quote -->
+        <div class="about-quote">
+          <div class="qoute-content">
+            <p>
+              "Programming isn’t about what you know; it’s about what you can
+              figure out.”
+            </p>
+            <span>– Chris Pine</span>
           </div>
         </div>
       </section>
 
       <!-- Projects Section -->
-      <section class="projects" id="projects" data-scroll>
-        <div class="container">
-          <h2 class="section-title scroll-appear">Projects</h2>
-          <div class="project-grid">
+      <section id="projects">
+        <div class="card-container">
+          <h2 class="section-title">Projects</h2>
+          <div class="card-grid">
             <!-- Project 1 -->
-            <article class="project-card scroll-appear delay-1">
+            <article class="project-card">
               <div class="card-inner">
                 <div class="card-front">
                   <span class="project-number">01</span>
@@ -81,7 +162,7 @@
             </article>
 
             <!-- Project 2 -->
-            <article class="project-card scroll-appear delay-2">
+            <article class="project-card">
               <div class="card-inner">
                 <div class="card-front">
                   <span class="project-number">02</span>
@@ -105,7 +186,7 @@
             </article>
 
             <!-- Project 3 -->
-            <article class="project-card scroll-appear delay-3">
+            <article class="project-card">
               <div class="card-inner">
                 <div class="card-front">
                   <span class="project-number">03</span>
@@ -135,9 +216,9 @@
       </section>
 
       <!-- Contact Section -->
-      <section class="contact" id="contact" data-scroll>
+      <section id="contact">
         <div class="contact-container">
-          <h2 class="section-title scroll-appear">Get in Touch</h2>
+          <h2 class="section-title">Get in Touch</h2>
           <div class="contact-methods">
             <a
               href="mailto:kielmadeja38@gmail.com"
@@ -155,7 +236,7 @@
             <a
               href="https://www.linkedin.com/in/kerokiel-madeja-6151b82ab/"
               target="_blank"
-              class="contact-item scroll-appear delay-2"
+              class="contact-item"
             >
               <div class="icon-wrapper">
                 <i class="fab fa-linkedin-in"></i>
@@ -169,7 +250,7 @@
             <a
               href="https://github.com/Kerokiel-Madeja"
               target="_blank"
-              class="contact-item scroll-appear delay-3"
+              class="contact-item"
             >
               <div class="icon-wrapper">
                 <i class="fab fa-github"></i>
@@ -182,10 +263,8 @@
           </div>
         </div>
       </section>
-    </div>
-
-    <!-- Footer Section -->
-    <footer class="site-footer" data-scroll>
+    </main>
+    <section id="site-footer">
       <div class="footer-content">
         <div class="footer-logo scroll-appear">&lt;CodeWithKiel/&gt;</div>
         <div class="footer-links scroll-appear delay-1">
@@ -216,8 +295,7 @@
           <p>&copy; 2025 Kerokiel. All rights reserved.</p>
         </div>
       </div>
-    </footer>
-
-    <script src="./assets/src/script.js"></script>
+    </section>
+    <script src="./js/script.js" defer></script>
   </body>
 </html>

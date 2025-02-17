@@ -1,0 +1,130 @@
+#projects {
+  padding: 4rem 2rem;
+  background: #0a0a0a;
+}
+
+.card-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-grid {
+  gap: 2rem;
+  display: grid;
+  padding: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.project-card {
+  padding: 2px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 15px;
+  background: #111;
+}
+
+.project-card::before {
+  content: "";
+  inset: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    #00ff8820 25%,
+    transparent 50%,
+    #00ff8820 75%,
+    transparent 100%
+  );
+}
+
+.card-inner {
+  height: 400px;
+  padding: 2rem;
+  display: flex;
+  position: relative;
+  border-radius: 15px;
+  flex-direction: column;
+  background: #111;
+  z-index: 2;
+}
+
+.project-number {
+  color: #00ff88;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.project-title {
+  color: white;
+  font-size: 1.8rem;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.project-excerpt {
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: auto;
+}
+
+.card-back {
+  inset: 0;
+  opacity: 0;
+  padding: 2rem;
+  display: flex;
+  position: absolute;
+  border-radius: 15px;
+  transform: translateY(100%);
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.project-card:hover .card-back {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-detail {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.project-link {
+  gap: 0.5rem;
+  color: #00ff88;
+  display: inline-flex;
+  text-decoration: none;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.project-link:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  #projects {
+    padding: 4rem 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-inner {
+    height: 350px;
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+}
