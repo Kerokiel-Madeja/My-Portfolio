@@ -1,0 +1,137 @@
+#home {
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-content {
+  max-width: 800px;
+  z-index: 2;
+  margin-top: var(--header-height);
+}
+
+.home-content h1 {
+  font-size: 4rem;
+  color: var(--text-white);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s forwards;
+  animation-delay: 0.3s;
+  line-height: 1.2;
+}
+
+.underline {
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(135deg, #00ff88 0%, #00cc6a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.underline::after {
+  content: "";
+  left: 0;
+  width: 0;
+  height: 5px;
+  bottom: 5px;
+  position: absolute;
+  background: linear-gradient(90deg, #00ff88, #00cc6a);
+  transition: width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+.home-content h1:hover .underline::after {
+  width: 100%;
+}
+
+.home-description {
+  color: var(--text-gray);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s forwards;
+  animation-delay: 0.5s;
+  line-height: 1.6;
+}
+
+.home-tags {
+  gap: 1rem;
+  display: flex;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tag {
+  color: var(--primary-color);
+  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s forwards;
+  animation-delay: 0.7s;
+  transition: var(--transition-smooth);
+  cursor: default;
+}
+
+.tag:hover {
+  background: rgba(0, 255, 136, 0.15);
+  border-color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 255, 136, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .home-content h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-description {
+    font-size: 1.2rem;
+  }
+
+  .home-tags {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tag {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 1rem 1.5rem;
+    max-width: 300px;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h1 {
+    font-size: 2rem;
+  }
+
+  .home-description {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --primary-color: #00ff88;
+  --bg-dark: #1a1a1a;
+  --bg-darker: #0a0a0a;
+  --bg-darkest: #0f0f0f;
+  --text-white: #ffffff;
+  --text-gray: #cccccc;
+  --text-light-gray: #aaa;
+  --transition-smooth: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  --shadow-glow: 0 8px 18px rgba(0, 255, 136, 0.2);
+  --header-height: 70px;
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #00ff88, #00cc6a);
+  z-index: 9999;
+  transition: width 0.1s ease-out;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+body {
+  background-color: var(--bg-dark);
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Smooth transitions for section switching */
+section {
+  transition:
+    opacity 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
+
+section.fade-in {
+  animation: sectionFadeIn 0.6s ease-in-out forwards;
+}
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-title {
+  color: #00ff88;
+  font-size: 2.5rem;
+  padding: 1rem 0 0;
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  left: 50%;
+  width: 80px;
+  bottom: -10px;
+  height: 3px;
+  position: absolute;
+  background: #00ff88;
+  transform: translateX(-50%);
+}
+
+.btn a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.btn {
+  border: 2px solid transparent;
+  padding: 1rem 2.5rem;
+  font-weight: 900;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  color: var(--bg-dark);
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: transparent;
+  border-color: var(--primary-color);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s forwards;
+  transition: var(--transition-smooth);
+  animation-delay: 0.9s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: var(--shadow-glow);
+}
+
+.btn:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.btn:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.tech-tags {
+  gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.tech-tags span {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  background: rgba(0, 255, 136, 0.1);
+  transition: var(--transition-smooth);
+  cursor: default;
+}
+
+.tech-tags span:hover {
+  background: rgba(0, 255, 136, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 255, 136, 0.15);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

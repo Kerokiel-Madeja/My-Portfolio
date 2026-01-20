@@ -1,0 +1,141 @@
+#site-footer {
+  padding: 4rem 2rem;
+  background: var(--bg-darker);
+  position: relative;
+  border-top: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+#site-footer::before {
+  content: "";
+  top: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  position: absolute;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--primary-color) 50%,
+    transparent 100%
+  );
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-logo {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-family: "Poppins", sans-serif;
+  transition: var(--transition-smooth);
+  cursor: default;
+}
+
+.footer-logo:hover {
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.6);
+  transform: scale(1.05);
+}
+
+.footer-links {
+  gap: 2rem;
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: var(--text-gray);
+  padding: 0.5rem 0;
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition-smooth);
+}
+
+.footer-link::after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  position: absolute;
+  background: var(--primary-color);
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--primary-color);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+.footer-social {
+  gap: 1.5rem;
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--primary-color);
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  transition: var(--transition-smooth);
+}
+
+.social-icon:hover {
+  transform: translateY(-5px) rotate(10deg);
+  box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+  background: rgba(0, 255, 136, 0.2);
+  border-color: var(--primary-color);
+}
+
+.footer-copy {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.highlight {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer-social {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #site-footer {
+    padding: 3rem 1rem;
+  }
+
+  .footer-logo {
+    font-size: 1.2rem;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+  }
+}

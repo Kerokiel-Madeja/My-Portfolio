@@ -1,15 +1,10 @@
-/* ============================================
-   About Section
-   ============================================ */
 #about {
   overflow: hidden;
-  position: relative;
 }
 
 .about-home {
-  padding: 6rem 2rem 4rem;
-  min-height: 100vh;
-  display: flex;
+  padding: 4rem 1rem 1rem 1rem;
+  height: 100vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;
@@ -18,87 +13,41 @@
 
 .about-home img {
   height: auto;
-  max-width: 400px;
-  width: 100%;
-  border-radius: var(--radius-md);
+  max-width: 350px;
+  border-radius: 15px;
   opacity: 0;
-  box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(0, 255, 136, 0.1);
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
   transform: translateY(30px);
   animation: fadeUp 0.8s forwards;
-  transition: all var(--transition-slow);
+  transition: var(--transition-smooth);
   animation-delay: 0.4s;
-  position: relative;
-  overflow: hidden;
-}
-
-.about-home img::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(0, 255, 136, 0.2),
-    transparent
-  );
-  transition: left 0.7s ease;
+  border: 2px solid rgba(0, 255, 136, 0.1);
 }
 
 .about-home img:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.4),
-    0 0 40px rgba(0, 255, 136, 0.3);
-}
-
-.about-home img:hover::before {
-  left: 100%;
-}
-
-.about-description {
-  max-width: 600px;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+  border-color: var(--primary-color);
 }
 
 .about-description p {
-  color: var(--color-text-primary);
-  font-size: 1.1rem;
+  color: var(--text-white);
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-bottom: 1rem;
   opacity: 0;
+  line-height: 1.8;
   transform: translateY(30px);
   animation: fadeUp 0.8s forwards;
-  transition: all var(--transition-base);
+  transition: var(--transition-smooth);
   animation-delay: 0.6s;
 }
 
-/* ============================================
-   Skills Section
-   ============================================ */
 .about-skills {
-  padding: 5rem 2rem;
-  background: linear-gradient(
-    180deg,
-    var(--color-bg-dark) 0%,
-    rgba(10, 10, 10, 0.95) 100%
-  );
+  padding: 3rem 0;
+  background-color: var(--bg-darker);
   position: relative;
-}
-
-.about-skills::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--gradient-primary);
-  opacity: 0.3;
 }
 
 .skills-container {
@@ -117,38 +66,36 @@
   padding: 2px;
   overflow: hidden;
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: 15px;
   background: linear-gradient(
     135deg,
-    rgba(0, 255, 136, 0.1) 0%,
-    rgba(0, 255, 136, 0.05) 100%
+    rgba(0, 255, 136, 0.1),
+    rgba(0, 255, 136, 0.05)
   );
-  transition: all var(--transition-slow);
-  transform-style: preserve-3d;
-  perspective: 1000px;
+  transition: var(--transition-smooth);
+}
+
+.skills:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
 }
 
 .skills::before {
   content: "";
-  position: absolute;
   inset: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
   background: linear-gradient(
     45deg,
     transparent 0%,
-    rgba(0, 255, 136, 0.2) 25%,
+    #00ff8840 25%,
     transparent 50%,
-    rgba(0, 255, 136, 0.2) 75%,
+    #00ff8840 75%,
     transparent 100%
   );
-  opacity: 0;
-  transition: opacity var(--transition-slow);
-  pointer-events: none;
-  z-index: 1;
-}
-
-.skills:hover {
-  transform: translateY(-10px) rotateX(2deg);
-  box-shadow: var(--shadow-glow-lg);
 }
 
 .skills:hover::before {
@@ -156,187 +103,71 @@
 }
 
 .skills-inner {
-  min-height: 220px;
-  padding: 2.5rem;
+  height: 200px;
+  padding: 2rem;
   display: flex;
   position: relative;
-  border-radius: var(--radius-md);
+  border-radius: 15px;
   flex-direction: column;
-  background: linear-gradient(
-    135deg,
-    rgba(17, 17, 17, 0.95) 0%,
-    rgba(26, 26, 26, 0.95) 100%
-  );
+  background: #111;
   z-index: 2;
-  transition: all var(--transition-base);
 }
 
 .skills h3 {
-  color: var(--color-text-primary);
+  color: var(--text-white);
   text-align: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  position: relative;
-  padding-bottom: 0.75rem;
-}
-
-.skills h3::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 40px;
-  height: 2px;
-  background: var(--gradient-primary);
-  border-radius: 2px;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .skills .tech-tags {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: auto;
 }
 
-/* ============================================
-   Quote Section
-   ============================================ */
 .about-quote {
-  padding: 5rem 2rem;
+  padding: 3rem 1rem;
   text-align: center;
+  border-radius: 15px;
   position: relative;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 10, 10, 0.5) 0%,
-    rgba(26, 26, 26, 0.3) 100%
-  );
 }
 
 .about-quote::before {
-  content: "\\201C";
+  content: '"';
   position: absolute;
-  top: 2rem;
+  top: 0;
   left: 50%;
   transform: translateX(-50%);
   font-size: 8rem;
   color: rgba(0, 255, 136, 0.1);
   font-family: Georgia, serif;
   line-height: 1;
-  pointer-events: none;
 }
 
 .qoute-content {
-  max-width: 800px;
-  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
 
 .qoute-content p {
   font-style: italic;
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-size: 1.5rem;
   font-weight: 600;
-  color: var(--color-text-primary);
-  margin-bottom: 1.5rem;
+  color: var(--text-white);
+  margin-bottom: 1rem;
   line-height: 1.6;
-  position: relative;
 }
 
 .qoute-content span {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--color-primary);
-  font-style: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--primary-color);
 }
 
-/* ============================================
-   Responsive Design
-   ============================================ */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .about-home {
-    padding: 5rem 1rem 3rem;
     gap: 2rem;
-    flex-direction: column;
-    text-align: center;
-    min-height: auto;
-  }
-
-  .about-home img {
-    max-width: 280px;
-  }
-
-  .about-description p {
-    padding: 0 1rem;
-    font-size: 1rem;
-  }
-
-  .about-skills {
-    padding: 4rem 1rem;
-  }
-
-  .skills-container {
-    padding: 0;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .skills-inner {
-    min-height: 200px;
-    padding: 2rem;
-  }
-
-  .skills h3 {
-    font-size: 1.3rem;
-  }
-
-  .about-quote {
-    padding: 4rem 1.5rem;
-  }
-
-  .about-quote::before {
-    font-size: 5rem;
-    top: 1rem;
-  }
-
-  .qoute-content p {
-    font-size: 1.2rem;
-  }
-
-  .qoute-content span {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-home {
-    padding: 4rem 1rem 2rem;
-  }
-
-  .about-home img {
-    max-width: 250px;
-  }
-
-  .skills-inner {
-    padding: 1.5rem;
-  }
-}
-
-/* ============================================
-   Tablet Responsive
-   ============================================ */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .about-home {
-    padding: 5rem 2rem;
-    gap: 3rem;
-  }
-
-  .about-home img {
-    max-width: 350px;
   }
 
   .skills-grid {
@@ -344,8 +175,52 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (max-width: 768px) {
+  .about-home {
+    gap: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-home img {
+    height: fit-content;
+    width: 250px;
+  }
+
+  .about-description p {
+    padding: 1rem;
+  }
+
+  .skills-container {
+    padding: 4rem 1rem;
+  }
+
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .qoute-content p {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-home img {
+    width: 200px;
+  }
+
+  .qoute-content p {
+    font-size: 1rem;
+  }
+
+  .about-quote::before {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .about-home img {
+    width: fit-content;
+    height: 250px;
   }
 }
