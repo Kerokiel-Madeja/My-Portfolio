@@ -12,7 +12,7 @@
   gap: 2rem;
   display: grid;
   padding: 2rem 0;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 }
 
 .project-card {
@@ -58,7 +58,7 @@
 }
 
 .card-inner {
-  height: 400px;
+  min-height: 400px;
   padding: 2rem;
   display: flex;
   position: relative;
@@ -156,7 +156,7 @@
   }
 
   .card-inner {
-    height: 350px;
+    min-height: 350px;
     padding: 1.5rem;
   }
 
@@ -167,7 +167,7 @@
 
 @media (max-width: 480px) {
   .card-inner {
-    height: 320px;
+    min-height: 320px;
     padding: 1.2rem;
   }
 

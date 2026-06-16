@@ -1,16 +1,18 @@
 #home {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
-  overflow: hidden;
+  overflow: visible;
   text-align: center;
   align-items: center;
   justify-content: center;
+  padding: var(--header-height) 1rem 2rem;
 }
 
 .home-content {
+  width: 100%;
   max-width: 800px;
   z-index: 2;
-  margin-top: var(--header-height);
 }
 
 .home-content h1 {
@@ -97,6 +99,11 @@
 }
 
 @media (max-width: 768px) {
+  #home {
+    align-items: flex-start;
+    padding-top: calc(var(--header-height) + 3rem);
+  }
+
   .home-content h1 {
     font-size: 2.5rem;
   }
@@ -127,6 +134,10 @@
 }
 
 @media (max-width: 480px) {
+  #home {
+    padding-top: calc(var(--header-height) + 2rem);
+  }
+
   .home-content h1 {
     font-size: 2rem;
   }
