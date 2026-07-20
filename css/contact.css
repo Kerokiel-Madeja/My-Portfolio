@@ -108,6 +108,7 @@
 .detail {
   color: var(--text-light-gray);
   font-size: 0.85rem;
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 1024px) {
