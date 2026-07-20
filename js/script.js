@@ -430,102 +430,97 @@ function downloadCvAsPdf() {
   doc.text("KEROKIEL L. MADEJA", page.margin, 48);
   doc.setTextColor(235, 235, 235);
   doc.setFontSize(11);
-  doc.text("Frontend Developer & System Analyst", page.margin, 68);
+  doc.text("Computer Engineering Graduate", page.margin, 68);
   doc.setFont("helvetica", "normal");
   doc.setFontSize(9);
   doc.text(
-    "(+63)-998-370-6782 | kielmadeja38@gmail.com | Portfolio",
+    "0998 370 6782 | kielmadeja38@gmail.com | https://kerokiel-madeja.github.io/My-Portfolio",
     page.margin,
     88,
   );
   y = 132;
 
-  writeSection("Objective");
+  writeSection("Professional Summary");
   writeText(
-    "Recent B.S. Computer Engineering graduate with a background in IT systems and internal controls. Passionate about web development, focused on creating clean, user-friendly, and intuitive UI experiences.",
+    "Computer Engineering graduate with knowledge of software development, web development, and database management. Skilled in HTML, CSS, JavaScript, MySQL, GitHub, WordPress, Figma, and basic PHP. Strong analytical and problem-solving skills with hands-on experience in web development, technical support, and data management. Eager to contribute and grow as an Associate Software Engineer.",
   );
-
-  writeSection("Technical Skills");
-  writeBullets([
-    "Web Development: HTML, CSS, JavaScript, WordPress",
-    "UI/UX: Figma, user-centered design principles",
-    "Database Management: MySQL, data retrieval",
-    "Tools & Version Control: GitHub, Crystal Reports",
-    "Operating Systems: Windows, Linux",
-    "System & Technical Support: troubleshooting, system monitoring, issue escalation",
-  ]);
-
-  writeSection("Personal Skills");
-  writeText("Teamwork | Time Management | Strong Problem-Solving | Effective Communication");
 
   writeSection("Experience");
   writeEntry(
-    "System Analyst",
-    "H2 Software Consulting Inc. (Client: EastWest Bank)",
-    "06/2026 to Present",
+    "Technical Support",
+    "H2 Software Consulting Inc. (Client: EastWest Bank), Makati City",
+    "Jun 2025 - Jun 2026",
     [
-      "Provided technical support and resolved system issues.",
-      "Monitored and validated system data.",
-      "Assisted in basic system analysis and documentation.",
-      "Coordinated issue escalation with internal teams.",
+      "Resolved technical issues to restore system functionality and minimize user downtime.",
+      "Monitored and validated system data to maintain accuracy and reliability.",
+      "Analyzed system issues and prepared documentation to support troubleshooting.",
+      "Coordinated with internal teams to escalate and resolve technical incidents efficiently.",
     ],
   );
-  writeEntry("Dev Intern", "One Document Corporation, Quezon City", "02/2024 to 03/2024", [
-    "Assisted in database management using MySQL Workbench.",
-    "Created reports from databases using Crystal Reports.",
-    "Conducted basic system troubleshooting and data validation.",
+  writeEntry(
+    "Data Analyst Intern",
+    "One Document Corporation, Quezon City",
+    "Feb 2024 - Mar 2024",
+    [
+      "Managed and validated database records using MySQL Workbench to ensure data accuracy.",
+      "Generated database reports using Crystal Reports to support business reporting.",
+      "Performed SQL data retrieval and validation to maintain data integrity.",
+      "Troubleshot database-related issues to improve data reliability.",
+    ],
+  );
+  writeEntry("Freelance Web Developer", "", "Sep 2024 - Present", [
+    "Developed responsive web pages using HTML, CSS, and JavaScript.",
+    "Built and customized websites for personal and academic projects.",
+    "Troubleshot and improved website projects for students by resolving layout and functionality issues.",
+    "Managed source code and project versions using GitHub.",
+    "Tested and optimized websites to ensure compatibility across multiple devices and browsers.",
   ]);
+
+  writeSection("Projects");
+  writeEntry(
+    "Fresh Produce Merchandising System",
+    "Capstone Project | Role: Front-End Developer",
+    "January 2023 - May 2024",
+    [
+      "Developed responsive user interfaces using HTML, CSS, and JavaScript to improve usability across devices.",
+      "Implemented interactive web pages with clean and maintainable code to enhance user experience.",
+      "Collaborated with team members using Git for version control, enabling efficient code integration and project coordination.",
+    ],
+  );
 
   writeSection("Education");
   writeEntry(
     "B.S., Computer Engineering",
     "Southern Luzon State University Main Campus",
-    "September 2020 - August 2024",
+    "Sep 2020 - Aug 2024",
   );
+
+  writeSection("Skills");
+  writeBullets([
+    "Web Development: HTML, CSS, JavaScript, WordPress",
+    "Database: MySQL, SQL, Database Querying",
+    "Version Control & Reporting: GitHub, Crystal Reports",
+    "System & Technical Support: Troubleshooting, System Monitoring, Issue Escalation",
+    "UI Design: Figma",
+    "AI Tools: ChatGPT, DeepSeek",
+  ]);
 
   writeSection("Certifications");
   writeEntry(
     "Principles of Web Development and Introduction to HTML",
     "DICT Learning Management System",
-    "Completed: March 2024",
+    "March 2024",
   );
   writeEntry(
     "Using HTML and CSS to Design a Website",
     "DICT Learning Management System",
-    "Completed: April 2024",
+    "April 2024",
   );
   writeEntry(
     "Google UX Design Professional Certificate",
     "Coursera, authorized by Google",
-    "Completed: November 2024",
+    "June 2025",
   );
-
-  writeSection("Capstone Project");
-  writeEntry("Frontend Developer", "Fresh Produce Merchandising System", "01/2023 - 05/2024", [
-    "Developed user-friendly interfaces using HTML, CSS, and JavaScript.",
-    "Ensured responsive design for optimal performance on various devices.",
-    "Collaborated with team members using Git for version control and code reviews.",
-  ]);
-
-  writeSection("Seminars");
-  writeEntry(
-    "Next-Generation IT: Hyperconverged Infrastructure (HCI) and Network Solution",
-    "",
-    "May 6, 2024 | 8 hours",
-  );
-  writeEntry(
-    "Weaving the Web! Integrating Frontend, Backend, and Frameworks",
-    "",
-    "May 8, 2024 | 8 hours",
-  );
-
-  writeSection("Character Reference");
-  writeText("Engr. Leonard Allen R. Pavino", {
-    style: "bold",
-    color: [17, 17, 17],
-  });
-  writeText("SLSU Computer Engineering Professor");
-  writeText("lpavino@slsu.edu.ph | 09473506600");
 
   doc.save("Kerokiel-Madeja-CV.pdf");
 }

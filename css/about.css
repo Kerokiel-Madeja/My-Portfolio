@@ -259,7 +259,7 @@
 
 .cv-modal__body {
   overflow: auto;
-  padding: 1.25rem;
+  padding: clamp(0.9rem, 2vw, 1.25rem);
   background:
     radial-gradient(circle at top left, rgba(0, 255, 136, 0.1), transparent 32rem),
     var(--bg-darkest);
@@ -268,7 +268,9 @@
 .cv-sheet {
   width: min(100%, 820px);
   margin: 0 auto;
-  padding: 2rem;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  display: grid;
+  gap: clamp(1.35rem, 2.6vw, 1.8rem);
   color: #242424;
   background: #f8faf9;
   border-radius: 10px;
@@ -319,14 +321,29 @@
   gap: 0.5rem;
   align-items: center;
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .cv-contact-list i {
   color: #009f59;
+  flex: 0 0 1rem;
+  text-align: center;
+}
+
+.cv-contact-list a {
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.2s ease;
+}
+
+.cv-contact-list a:hover {
+  color: #007541;
 }
 
 .cv-section {
-  margin-top: 1.4rem;
+  min-width: 0;
+  margin-top: 0;
 }
 
 .cv-section h3 {
@@ -340,16 +357,17 @@
 .cv-section p,
 .cv-list,
 .cv-entry span,
-.cv-mini-card span {
+.cv-mini-card span,
+.cv-skill-list span {
   color: #39433e;
   font-size: 0.94rem;
-  line-height: 1.65;
+  line-height: 1.55;
 }
 
 .cv-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .cv-list {
@@ -376,14 +394,44 @@
   background: rgba(0, 184, 103, 0.12);
 }
 
+.cv-skill-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.cv-skill-list li {
+  min-width: 0;
+  display: grid;
+  align-content: start;
+  gap: 0.2rem;
+  padding: 0.75rem 0.85rem;
+  border-left: 3px solid #00b867;
+  border-radius: 6px;
+  background: #ffffff;
+}
+
+.cv-skill-list strong {
+  color: #00693a;
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
 .cv-entry {
-  padding: 1rem 0;
+  display: grid;
+  gap: 0.55rem;
+  padding: 1rem 0 0;
   border-top: 1px solid rgba(0, 134, 74, 0.16);
 }
 
 .cv-entry:first-of-type {
   padding-top: 0;
   border-top: 0;
+}
+
+.cv-entry + .cv-entry {
+  margin-top: 1rem;
 }
 
 .cv-entry h4,
@@ -395,28 +443,45 @@
 
 .cv-entry__head {
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 0.45rem;
+}
+
+.cv-entry__head > div {
+  min-width: 0;
+  display: grid;
+  gap: 0.15rem;
 }
 
 .cv-entry__head span {
   flex: 0 0 auto;
   color: #007541;
   font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .cv-card-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 0.8rem;
 }
 
 .cv-mini-card {
+  display: grid;
+  align-content: start;
+  gap: 0.35rem;
   padding: 1rem;
   border-radius: 8px;
   background: #ffffff;
   border: 1px solid rgba(0, 134, 74, 0.14);
+}
+
+.cv-mini-card span {
+  padding-top: 0.15rem;
+  color: #007541;
+  font-weight: 700;
 }
 
 .cv-download-btn {
@@ -490,8 +555,7 @@ body.cv-modal-open {
   }
 
   .cv-sheet__hero,
-  .cv-grid,
-  .cv-card-grid {
+  .cv-grid {
     grid-template-columns: 1fr;
   }
 
@@ -541,11 +605,17 @@ body.cv-modal-open {
 
   .cv-sheet {
     padding: 1rem;
+    gap: 1.2rem;
     border-radius: 8px;
   }
 
   .cv-sheet__hero h1 {
     font-size: 1.8rem;
+  }
+
+  .cv-skill-list,
+  .cv-card-grid {
+    grid-template-columns: 1fr;
   }
 
   .cv-download-btn {
