@@ -111,6 +111,10 @@ header.scrolled {
 }
 
 @media (max-width: 768px) {
+  .navigation {
+    padding: 0 1.25rem;
+  }
+
   .hamburger {
     display: block;
   }
@@ -121,25 +125,36 @@ header.scrolled {
     right: 0;
     top: 70px;
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     position: fixed;
     flex-direction: column;
-    transition: all 0.5s ease-out;
+    transition: clip-path 0.4s ease-out, opacity 0.3s ease;
     clip-path: circle(0 at 92% 0%);
-    backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(21, 21, 21, 0.75);
-    -webkit-backdrop-filter: blur(16px) saturate(180%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+    backdrop-filter: blur(18px) saturate(180%);
+    background-color: rgba(18, 18, 18, 0.95);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
   }
 
   .nav-links.active {
-    clip-path: circle(1000px at 90% -10%);
+    clip-path: circle(1200px at 90% -10%);
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
   }
 
   .nav-links li {
     width: 100%;
-    padding: 1rem 0;
+    padding: 0.85rem 0;
     text-align: center;
+  }
+
+  .nav-links a {
+    font-size: 1.15rem;
+    display: inline-block;
   }
 
   .hamburger.active .line:nth-child(1) {

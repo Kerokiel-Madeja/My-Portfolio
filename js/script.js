@@ -298,6 +298,29 @@ document
     observer.observe(el);
   });
 
+// Mobile touch / click toggle for project cards
+document.querySelectorAll(".project-card").forEach((card) => {
+  card.addEventListener("click", (e) => {
+    // If clicking a link inside the card, allow default link action
+    if (e.target.closest("a")) return;
+
+    const isAlreadyFlipped = card.classList.contains("is-flipped");
+    document.querySelectorAll(".project-card.is-flipped").forEach((c) => {
+      if (c !== card) c.classList.remove("is-flipped");
+    });
+    card.classList.toggle("is-flipped", !isAlreadyFlipped);
+  });
+});
+
+// Close flipped card when tapping outside
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".project-card")) {
+    document.querySelectorAll(".project-card.is-flipped").forEach((card) => {
+      card.classList.remove("is-flipped");
+    });
+  }
+});
+
 // Functions
 function showElements(elements) {
   elements.forEach(({ el, display = "block" }) => {
