@@ -499,18 +499,6 @@ function downloadCvAsPdf() {
     "Tested and optimized websites to ensure compatibility across multiple devices and browsers.",
   ]);
 
-  writeSection("Projects");
-  writeEntry(
-    "Fresh Produce Merchandising System",
-    "Capstone Project | Role: Front-End Developer",
-    "January 2023 - May 2024",
-    [
-      "Developed responsive user interfaces using HTML, CSS, and JavaScript to improve usability across devices.",
-      "Implemented interactive web pages with clean and maintainable code to enhance user experience.",
-      "Collaborated with team members using Git for version control, enabling efficient code integration and project coordination.",
-    ],
-  );
-
   writeSection("Education");
   writeEntry(
     "B.S., Computer Engineering",
