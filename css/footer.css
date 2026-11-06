@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Site Footer per B10 Ship Requirements
+   ========================================================================== */
+
+.site-footer {
+  background-color: var(--bg-surface-800);
+  border-top: 1px solid var(--bg-surface-600);
+  padding-top: var(--space-600);
+  padding-bottom: var(--space-600);
+}
+
+.footer-content-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-400);
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-50);
+}
+
+.footer-logo {
+  color: var(--text-white);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-50);
+  text-decoration: none;
+}
+
+.footer-tagline {
+  color: var(--text-dim);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.footer-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  transition: color var(--duration-hover) var(--ease-base);
+}
+
+.footer-link:hover {
+  color: var(--primary-color);
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+}
+
+.social-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background-color: var(--bg-surface-700);
+  border: 1px solid var(--bg-surface-500);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color var(--duration-hover) var(--ease-base),
+              border-color var(--duration-hover) var(--ease-base),
+              background-color var(--duration-hover) var(--ease-base);
+}
+
+.social-icon-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-border);
+  background-color: var(--bg-surface-600);
+}
+
+.footer-bottom-bar {
+  margin-top: var(--space-400);
+  padding-top: var(--space-300);
+  border-top: 1px solid var(--bg-surface-600);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-200);
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  color: var(--text-dim);
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+}
+
+.footer-legal-links a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 16px;
+  transition: color var(--duration-hover) var(--ease-base);
+}
+
+.footer-legal-links a:hover {
+  color: var(--text-muted);
+}

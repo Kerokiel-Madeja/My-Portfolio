@@ -1,0 +1,236 @@
+/* ==========================================================================
+   Hero Section per B5 Hero Rules & Staggered Intro Engine
+   ========================================================================== */
+
+.hero-section {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--header-height) + var(--space-600));
+  padding-bottom: var(--space-800);
+  background-color: var(--bg-black);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle Interactive Spotlight Backdrop per B7 */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--spotlight-x, 50%) var(--spotlight-y, 42%),
+    rgba(0, 255, 136, 0.08),
+    transparent 70%
+  );
+  z-index: 1;
+  transition: opacity 400ms var(--ease-base);
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 860px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Staggered Intro Animation Keyframes */
+@keyframes heroFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroRiseUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(0, 255, 136, 0);
+  }
+  50% {
+    box-shadow: 0 8px 24px rgba(0, 255, 136, 0.12);
+  }
+}
+
+.intro-stagger-1 {
+  animation: heroFadeDown 700ms var(--ease-base) forwards;
+}
+
+.intro-stagger-2 {
+  opacity: 0;
+  animation: heroRiseUp 800ms var(--ease-base) 140ms forwards;
+}
+
+.intro-stagger-3 {
+  opacity: 0;
+  animation: heroRiseUp 800ms var(--ease-base) 280ms forwards;
+}
+
+.intro-stagger-4 {
+  opacity: 0;
+  animation: heroRiseUp 800ms var(--ease-base) 420ms forwards;
+}
+
+.intro-stagger-5 {
+  opacity: 0;
+  animation: heroRiseUp 800ms var(--ease-base) 560ms forwards,
+             heroPulseGlow 4s ease-in-out 1.5s infinite;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-75);
+  padding: var(--space-25) var(--space-100);
+  background-color: var(--bg-surface-700);
+  border: 1px solid var(--bg-surface-500);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-300);
+  transition: border-color var(--duration-hover) var(--ease-base);
+}
+
+.hero-badge:hover {
+  border-color: var(--primary-border);
+}
+
+.hero-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary-color);
+  box-shadow: 0 0 8px var(--primary-color);
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.85);
+  }
+}
+
+.hero-badge-text {
+  color: var(--text-white);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+/* Gradient on heading text per B5: #FFFFFF -> #9B9B9B */
+.hero-headline {
+  max-width: 680px;
+  background: linear-gradient(90deg, #ffffff 0%, #9b9b9b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--space-300);
+}
+
+.hero-subheadline {
+  max-width: 680px;
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+  margin-bottom: var(--space-400);
+  text-wrap: pretty;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-200);
+  margin-bottom: var(--space-700);
+  flex-wrap: wrap;
+}
+
+/* Proof line strip per A2 & Hero requirements */
+.hero-proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-300);
+  width: 100%;
+  max-width: 720px;
+  padding: var(--space-300);
+  background-color: var(--bg-surface-700);
+  border: 1px solid var(--bg-surface-500);
+  border-radius: var(--radius-xl);
+  transition: border-color var(--duration-hover) var(--ease-base);
+}
+
+.hero-proof-strip:hover {
+  border-color: var(--primary-border);
+}
+
+.proof-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.proof-value {
+  color: var(--primary-color);
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.proof-label {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  margin-top: var(--space-25);
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-stagger-1,
+  .intro-stagger-2,
+  .intro-stagger-3,
+  .intro-stagger-4,
+  .intro-stagger-5 {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-subheadline {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .hero-proof-strip {
+    grid-template-columns: 1fr;
+    gap: var(--space-200);
+    padding: var(--space-200);
+  }
+}

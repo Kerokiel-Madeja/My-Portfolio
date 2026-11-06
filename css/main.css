@@ -1,0 +1,479 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* ==========================================================================
+   Design Tokens per SKILL.md specification
+   ========================================================================== */
+:root {
+  /* Brand and Dark Surface Palette */
+  --primary-color: #00ff88;
+  --primary-hover: #00e077;
+  --primary-glow: rgba(0, 255, 136, 0.2);
+  --primary-subtle: rgba(0, 255, 136, 0.1);
+  --primary-border: rgba(0, 255, 136, 0.25);
+
+  /* Approved Flat Dark Backgrounds */
+  --bg-black: #000000;
+  --bg-surface-800: #131209;
+  --bg-surface-700: #181818;
+  --bg-surface-600: #1f1f1f;
+  --bg-surface-500: #272727;
+  --bg-surface-400: #313131;
+
+  /* Text Colors */
+  --text-white: #ffffff;
+  --text-muted: #9b9b9b;
+  --text-dim: #737373;
+  --text-error: #ff6b6b;
+
+  /* Spacing Scale Tokens */
+  --space-0: 0px;
+  --space-25: 2px;
+  --space-50: 4px;
+  --space-75: 8px;
+  --space-100: 12px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-600: 48px;
+  --space-700: 64px;
+  --space-800: 80px;
+  --space-900: 96px;
+
+  /* Corner Radius Tokens */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Motion Curves & Timing */
+  --ease-base: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-base: 500ms;
+  --duration-hover: 300ms;
+  --transition-layout: transform var(--duration-base) var(--ease-base), opacity var(--duration-base) var(--ease-base);
+  --transition-color: background-color var(--duration-hover) var(--ease-base), border-color var(--duration-hover) var(--ease-base), color var(--duration-hover) var(--ease-base);
+
+  /* Navigation Height */
+  --header-height: 64px;
+}
+
+/* ==========================================================================
+   CSS Reset & Base Rules
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + var(--space-400));
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  font-family: "Poppins", sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-black);
+  color: var(--text-white);
+  line-height: 1.5;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Fixed Scroll Progress Indicator at Top */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--primary-color);
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+  z-index: 9999;
+  pointer-events: none;
+  transition: width 100ms linear;
+}
+
+/* Skip link for keyboard accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--space-300);
+  background: var(--primary-color);
+  color: var(--bg-black);
+  padding: var(--space-75) var(--space-100);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  z-index: 10000;
+  text-decoration: none;
+  transition: transform var(--duration-hover) var(--ease-base);
+}
+
+.skip-link:focus {
+  top: var(--space-200);
+}
+
+/* ==========================================================================
+   Named Typography Styles per B1 System
+   ========================================================================== */
+.heading-1 {
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.heading-2 {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.heading-3 {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.heading-4 {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.heading-5 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.heading-6 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.title-1 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.title-2 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.title-3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.title-4 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.title-5 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.body-1 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  text-wrap: pretty;
+}
+
+.body-2 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+
+.body-3 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-wrap: pretty;
+}
+
+.body-4 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  text-wrap: pretty;
+}
+
+.body-5 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  text-wrap: pretty;
+}
+
+.body-6 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  text-wrap: pretty;
+}
+
+.button-lg {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+.button-md {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.button-sm {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+.button-xsm {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.caption-1 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+}
+
+.caption-2 {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.caption-3 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+}
+
+.caption-4 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+.caption-5 {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+/* ==========================================================================
+   Button System (Strict B2 rule: 8px vertical, 12px horizontal)
+   ========================================================================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-75);
+  padding: 8px 12px;
+  background-color: var(--primary-color);
+  color: var(--bg-black);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--duration-hover) var(--ease-base),
+              background-color var(--duration-hover) var(--ease-base),
+              box-shadow var(--duration-hover) var(--ease-base);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-75);
+  padding: 8px 12px;
+  background-color: var(--bg-surface-700);
+  color: var(--text-white);
+  border: 1px solid var(--bg-surface-500);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--duration-hover) var(--ease-base),
+              background-color var(--duration-hover) var(--ease-base),
+              border-color var(--duration-hover) var(--ease-base),
+              color var(--duration-hover) var(--ease-base);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-surface-600);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.btn-sm {
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* ==========================================================================
+   Common Section Container & Layout
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-300);
+  padding-right: var(--space-300);
+}
+
+.section-wrapper {
+  padding-top: var(--space-800);
+  padding-bottom: var(--space-800);
+  background-color: var(--bg-black);
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: var(--space-600);
+  text-align: left;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-50);
+  padding: var(--space-25) var(--space-75);
+  background-color: var(--bg-surface-600);
+  border: 1px solid var(--primary-border);
+  border-radius: var(--radius-sm);
+  color: var(--primary-color);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-100);
+}
+
+.section-title {
+  color: var(--text-white);
+  margin-bottom: var(--space-100);
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  max-width: 640px;
+}
+
+/* ==========================================================================
+   Scroll Reveal Animations via IntersectionObserver
+   ========================================================================== */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 600ms var(--ease-base), transform 600ms var(--ease-base);
+  will-change: opacity, transform;
+}
+
+.reveal-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading-1 {
+    font-size: 40px;
+    line-height: 44px;
+  }
+  .heading-2 {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .heading-3 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  .section-wrapper {
+    padding-top: var(--space-600);
+    padding-bottom: var(--space-600);
+  }
+}
