@@ -1,7 +1,4 @@
-/* ==========================================================================
-   Hero Section per B5 Hero Rules & Staggered Intro Engine
-   ========================================================================== */
-
+/* Hero section */
 .hero-section {
   min-height: 100vh;
   min-height: 100svh;
@@ -16,17 +13,15 @@
   overflow: hidden;
 }
 
-/* Subtle Interactive Spotlight Backdrop per B7 */
+/* Spotlight backdrop */
 .hero-section::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(
-    600px circle at var(--spotlight-x, 50%) var(--spotlight-y, 42%),
-    rgba(0, 255, 136, 0.08),
-    transparent 70%
-  );
+  background: radial-gradient(600px circle at var(--spotlight-x, 50%) var(--spotlight-y, 42%),
+      rgba(0, 255, 136, 0.08),
+      transparent 70%);
   z-index: 1;
   transition: opacity 400ms var(--ease-base);
 }
@@ -46,6 +41,7 @@
     opacity: 0;
     transform: translateY(-16px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -57,6 +53,7 @@
     opacity: 0;
     transform: translateY(32px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -64,9 +61,12 @@
 }
 
 @keyframes heroPulseGlow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 0 rgba(0, 255, 136, 0);
   }
+
   50% {
     box-shadow: 0 8px 24px rgba(0, 255, 136, 0.12);
   }
@@ -94,7 +94,7 @@
 .intro-stagger-5 {
   opacity: 0;
   animation: heroRiseUp 800ms var(--ease-base) 560ms forwards,
-             heroPulseGlow 4s ease-in-out 1.5s infinite;
+    heroPulseGlow 4s ease-in-out 1.5s infinite;
 }
 
 .hero-badge {
@@ -123,10 +123,13 @@
 }
 
 @keyframes pulseDot {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
+
   50% {
     opacity: 0.6;
     transform: scale(0.85);
@@ -140,7 +143,7 @@
   font-weight: 500;
 }
 
-/* Gradient on heading text per B5: #FFFFFF -> #9B9B9B */
+/* Headline text gradient */
 .hero-headline {
   max-width: 680px;
   background: linear-gradient(90deg, #ffffff 0%, #9b9b9b 100%);
@@ -169,7 +172,7 @@
   flex-wrap: wrap;
 }
 
-/* Proof line strip per A2 & Hero requirements */
+/* Proof strip */
 .hero-proof-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -212,6 +215,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .intro-stagger-1,
   .intro-stagger-2,
   .intro-stagger-3,
@@ -228,6 +232,7 @@
     font-size: 16px;
     line-height: 24px;
   }
+
   .hero-proof-strip {
     grid-template-columns: 1fr;
     gap: var(--space-200);

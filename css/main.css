@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-/* ==========================================================================
-   Design Tokens per SKILL.md specification
-   ========================================================================== */
+/* Design tokens */
 :root {
   /* Brand and Dark Surface Palette */
   --primary-color: #00ff88;
@@ -59,9 +57,7 @@
   --header-height: 64px;
 }
 
-/* ==========================================================================
-   CSS Reset & Base Rules
-   ========================================================================== */
+/* Base styles and reset */
 *,
 *::before,
 *::after {
@@ -122,9 +118,7 @@ body {
   top: var(--space-200);
 }
 
-/* ==========================================================================
-   Named Typography Styles per B1 System
-   ========================================================================== */
+/* Typography */
 .heading-1 {
   font-size: 60px;
   line-height: 60px;
@@ -297,9 +291,7 @@ body {
   font-weight: 400;
 }
 
-/* ==========================================================================
-   Button System (Strict B2 rule: 8px vertical, 12px horizontal)
-   ========================================================================== */
+/* Buttons */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -316,8 +308,8 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: transform var(--duration-hover) var(--ease-base),
-              background-color var(--duration-hover) var(--ease-base),
-              box-shadow var(--duration-hover) var(--ease-base);
+    background-color var(--duration-hover) var(--ease-base),
+    box-shadow var(--duration-hover) var(--ease-base);
 }
 
 .btn-primary:hover {
@@ -351,9 +343,9 @@ body {
   font-weight: 600;
   cursor: pointer;
   transition: transform var(--duration-hover) var(--ease-base),
-              background-color var(--duration-hover) var(--ease-base),
-              border-color var(--duration-hover) var(--ease-base),
-              color var(--duration-hover) var(--ease-base);
+    background-color var(--duration-hover) var(--ease-base),
+    border-color var(--duration-hover) var(--ease-base),
+    color var(--duration-hover) var(--ease-base);
 }
 
 .btn-secondary:hover {
@@ -378,9 +370,7 @@ body {
   line-height: 20px;
 }
 
-/* ==========================================================================
-   Common Section Container & Layout
-   ========================================================================== */
+/* Layout and containers */
 .container {
   width: 100%;
   max-width: 1120px;
@@ -429,9 +419,7 @@ body {
   max-width: 640px;
 }
 
-/* ==========================================================================
-   Scroll Reveal Animations via IntersectionObserver
-   ========================================================================== */
+/* Scroll reveal animations */
 .reveal-item {
   opacity: 0;
   transform: translateY(32px);
@@ -445,6 +433,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -453,6 +442,7 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+
   .reveal-item {
     opacity: 1 !important;
     transform: none !important;
@@ -464,14 +454,17 @@ body {
     font-size: 40px;
     line-height: 44px;
   }
+
   .heading-2 {
     font-size: 32px;
     line-height: 36px;
   }
+
   .heading-3 {
     font-size: 26px;
     line-height: 32px;
   }
+
   .section-wrapper {
     padding-top: var(--space-600);
     padding-bottom: var(--space-600);

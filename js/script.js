@@ -1,8 +1,4 @@
-/**
- * Portfolio Interaction and Motion Engine
- * Strictly follows B7 Motion, B9 States, and B11 Tagline Reveal
- */
-
+// Portfolio interactions and animations
 document.addEventListener("DOMContentLoaded", () => {
   initScrollProgress();
   initHeroSpotlight();
@@ -15,9 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initInquiryForm();
 });
 
-/* ==========================================================================
-   0. Top Scroll Progress Indicator & Hero Ambient Spotlight per B7
-   ========================================================================== */
+// Scroll progress bar
 function initScrollProgress() {
   const progressBar = document.querySelector("#scrollProgressBar");
   if (!progressBar) return;
@@ -46,6 +40,7 @@ function initScrollProgress() {
   updateProgress();
 }
 
+// Hero spotlight effect
 function initHeroSpotlight() {
   const heroSection = document.querySelector("#home");
   if (!heroSection) return;
@@ -74,9 +69,7 @@ function initHeroSpotlight() {
   );
 }
 
-/* ==========================================================================
-   1. Navigation & Mobile Menu per B7
-   ========================================================================== */
+// Navigation and mobile menu
 function initNavigation() {
   const menuToggle = document.querySelector("#menuToggle");
   const mobileMenu = document.querySelector("#mobileMenu");
@@ -91,7 +84,7 @@ function initNavigation() {
       document.body.style.overflow = isOpen ? "hidden" : "";
     });
 
-    // Close on mobile link click
+    // Close menu when a link is clicked
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
         if (mobileMenu.classList.contains("is-open")) {
@@ -104,7 +97,7 @@ function initNavigation() {
     });
   }
 
-  // Active section indicator using IntersectionObserver
+  // Highlight active link on scroll
   const navObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -130,9 +123,7 @@ function initNavigation() {
   sections.forEach((section) => navObserver.observe(section));
 }
 
-/* ==========================================================================
-   2. Scroll Reveals per B7 using IntersectionObserver
-   ========================================================================== */
+// Scroll reveals
 function initScrollReveals() {
   const revealElements = document.querySelectorAll(".reveal-item");
   if (!revealElements.length) return;
@@ -142,7 +133,7 @@ function initScrollReveals() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("revealed");
-          observer.unobserve(entry.target); // Reveal once per B7
+          observer.unobserve(entry.target);
         }
       });
     },
@@ -155,14 +146,12 @@ function initScrollReveals() {
   revealElements.forEach((el) => revealObserver.observe(el));
 }
 
-/* ==========================================================================
-   3. Tagline Reveal Section per B11
-   ========================================================================== */
+// Tagline word reveal
 function initTaglineReveal() {
   const taglineEl = document.querySelector("#taglineText");
   if (!taglineEl) return;
 
-  // Split words if not already wrapped
+  // Wrap each word in a span
   const words = taglineEl.innerText.trim().split(/\s+/);
   taglineEl.innerHTML = words
     .map((word) => {
@@ -174,14 +163,12 @@ function initTaglineReveal() {
 
   const wordNodes = taglineEl.querySelectorAll(".tagline-word");
 
-  // Reduced motion check
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReducedMotion) {
     wordNodes.forEach((node) => node.classList.add("is-active"));
     return;
   }
 
-  // Throttled scroll listener using requestAnimationFrame per B11
   let isTicking = false;
 
   function checkWordVisibility() {
@@ -212,9 +199,7 @@ function initTaglineReveal() {
   checkWordVisibility();
 }
 
-/* ==========================================================================
-   3.5. View All Projects Drawer Toggle per B9 States
-   ========================================================================== */
+// Projects drawer toggle
 function initProjectsToggle() {
   const toggleBtn = document.querySelector("#toggleAllProjectsBtn");
   const drawer = document.querySelector("#allProjectsDrawer");
@@ -233,7 +218,6 @@ function initProjectsToggle() {
       if (toggleText) toggleText.textContent = "Show fewer projects";
       if (caretIcon) caretIcon.style.transform = "rotate(180deg)";
 
-      // Trigger scroll reveals for newly opened drawer items
       const newItems = drawer.querySelectorAll(".reveal-item:not(.revealed)");
       newItems.forEach((item) => item.classList.add("revealed"));
     } else {
@@ -243,7 +227,6 @@ function initProjectsToggle() {
       if (toggleText) toggleText.textContent = "View all 8 projects";
       if (caretIcon) caretIcon.style.transform = "rotate(0deg)";
 
-      // Smooth scroll back to top of projects section if needed
       const projectsSection = document.querySelector("#work");
       if (projectsSection) {
         projectsSection.scrollIntoView({ behavior: "smooth" });
@@ -252,9 +235,7 @@ function initProjectsToggle() {
   });
 }
 
-/* ==========================================================================
-   4. FAQ Accordion per B9 & A2
-   ========================================================================== */
+// FAQ accordion
 function initFaqAccordion() {
   const faqTriggers = document.querySelectorAll(".faq-trigger");
 
@@ -263,7 +244,7 @@ function initFaqAccordion() {
       const item = trigger.closest(".faq-item");
       const isOpen = item.classList.contains("is-open");
 
-      // Close all other items
+      // Close other items
       document.querySelectorAll(".faq-item").forEach((otherItem) => {
         if (otherItem !== item) {
           otherItem.classList.remove("is-open");
@@ -272,16 +253,14 @@ function initFaqAccordion() {
         }
       });
 
-      // Toggle current
+      // Toggle selected item
       item.classList.toggle("is-open", !isOpen);
       trigger.setAttribute("aria-expanded", !isOpen ? "true" : "false");
     });
   });
 }
 
-/* ==========================================================================
-   5. CV Modal with Accessible Focus Trapping
-   ========================================================================== */
+// CV modal and PDF export
 function initCvModal() {
   const openButtons = document.querySelectorAll("[data-open-cv]");
   const modalBackdrop = document.querySelector("#cvModalBackdrop");
@@ -432,9 +411,7 @@ function initCvModal() {
   }
 }
 
-/* ==========================================================================
-   6. Conversion Inquiry Form Validation per B8 & B9
-   ========================================================================== */
+// Inquiry form validation and submission
 function initInquiryForm() {
   const form = document.querySelector("#inquiryForm");
   const statusEl = document.querySelector("#formStatus");
@@ -449,7 +426,6 @@ function initInquiryForm() {
     const message = form.querySelector("#projectDetails").value.trim();
     const submitBtn = form.querySelector("#submitInquiryBtn");
 
-    // Reset status
     statusEl.className = "form-status";
     statusEl.textContent = "";
 
@@ -467,11 +443,10 @@ function initInquiryForm() {
       return;
     }
 
-    // Submit state per B9
     submitBtn.disabled = true;
     submitBtn.textContent = "Sending inquiry...";
 
-    // Construct mailto fallback and friendly confirmation
+    // Open email client with form data
     setTimeout(() => {
       submitBtn.disabled = false;
       submitBtn.textContent = "Send inquiry";

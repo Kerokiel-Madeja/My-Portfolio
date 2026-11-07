@@ -1,6 +1,4 @@
-/* ==========================================================================
-   Benefits, How It Works, About, FAQ & Conversion Form
-   ========================================================================== */
+/* Content sections */
 
 /* --- 1. Benefits Section --- */
 .benefits-grid {
@@ -18,7 +16,7 @@
   flex-direction: column;
   gap: var(--space-200);
   transition: border-color var(--duration-hover) var(--ease-base),
-              transform var(--duration-hover) var(--ease-base);
+    transform var(--duration-hover) var(--ease-base);
 }
 
 .benefit-card:hover {
@@ -123,7 +121,8 @@
   width: 100%;
   height: 380px;
   object-fit: cover;
-  border-radius: var(--radius-xl); /* Nested: 24px - 8px = 16px */
+  border-radius: var(--radius-xl);
+  /* Nested: 24px - 8px = 16px */
   filter: grayscale(15%);
   transition: filter var(--duration-hover) var(--ease-base);
 }
@@ -148,7 +147,7 @@
   gap: var(--space-200);
 }
 
-/* Timeline Architecture per User Reference & SKILL.md */
+/* Timeline */
 .timeline-section-wrap {
   margin-top: var(--space-800);
   width: 100%;
@@ -218,7 +217,7 @@
   text-align: left;
 }
 
-/* Directional Timeline Motion Reveals per B7 */
+/* Timeline animations */
 .timeline-entry.reveal-item.entry-left {
   opacity: 0;
   transform: translateX(-32px);
@@ -249,8 +248,8 @@
   transform: scale(0);
   opacity: 0;
   transition: transform 600ms var(--ease-base) 180ms,
-              opacity 600ms var(--ease-base) 180ms,
-              box-shadow var(--duration-hover) var(--ease-base);
+    opacity 600ms var(--ease-base) 180ms,
+    box-shadow var(--duration-hover) var(--ease-base);
 }
 
 .timeline-entry.revealed .timeline-node {
@@ -273,7 +272,7 @@
   flex-direction: column;
   gap: var(--space-75);
   transition: border-color var(--duration-hover) var(--ease-base),
-              transform var(--duration-hover) var(--ease-base);
+    transform var(--duration-hover) var(--ease-base);
 }
 
 .timeline-card:hover {
@@ -325,6 +324,7 @@
   .timeline-spine::before {
     left: 14px;
   }
+
   .timeline-entry {
     width: 100% !important;
     left: 0 !important;
@@ -333,9 +333,11 @@
     text-align: left !important;
     justify-content: flex-start !important;
   }
+
   .timeline-entry.entry-left .timeline-pill {
     margin-left: 0;
   }
+
   .timeline-entry.entry-left .timeline-node,
   .timeline-entry.entry-right .timeline-node {
     left: 8px;
@@ -508,7 +510,7 @@
   padding: var(--space-75) var(--space-100);
   border-radius: var(--radius-md);
   transition: color var(--duration-hover) var(--ease-base),
-              background-color var(--duration-hover) var(--ease-base);
+    background-color var(--duration-hover) var(--ease-base);
 }
 
 .direct-channel-item:hover {
@@ -691,12 +693,14 @@
 }
 
 @media (max-width: 900px) {
+
   .benefits-grid,
   .process-grid,
   .about-grid,
   .inquiry-grid {
     grid-template-columns: 1fr;
   }
+
   .inquiry-grid {
     padding: var(--space-300);
   }

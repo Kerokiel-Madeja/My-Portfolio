@@ -1,7 +1,4 @@
-/* ==========================================================================
-   Projects & Case Studies per B3 Radius & B4 Border Rules
-   ========================================================================== */
-
+/* Projects and case studies */
 .projects-grid {
   display: flex;
   flex-direction: column;
@@ -19,7 +16,7 @@
   gap: var(--space-400);
   align-items: center;
   transition: border-color var(--duration-hover) var(--ease-base),
-              transform var(--duration-hover) var(--ease-base);
+    transform var(--duration-hover) var(--ease-base);
 }
 
 .project-case-card:hover {
@@ -83,7 +80,8 @@
   padding: var(--space-200);
   background-color: var(--bg-surface-600);
   border: 1px solid var(--bg-surface-500);
-  border-radius: var(--radius-md); /* Nested formula: 24px - 16px = 8px */
+  border-radius: var(--radius-md);
+  /* Nested formula: 24px - 16px = 8px */
 }
 
 .outcome-point {
@@ -221,7 +219,7 @@
   pointer-events: none;
 }
 
-/* Touch shield makes the iframe completely non-clickable per user request */
+/* Prevents iframe interaction while allowing page scrolling */
 .iframe-touch-shield {
   position: absolute;
   inset: 0;
@@ -250,7 +248,7 @@
   width: 100%;
   overflow: hidden;
   transition: opacity var(--duration-base) var(--ease-base),
-              transform var(--duration-base) var(--ease-base);
+    transform var(--duration-base) var(--ease-base);
 }
 
 .all-projects-drawer[hidden] {
@@ -267,6 +265,7 @@
     opacity: 0;
     transform: translateY(24px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -293,6 +292,7 @@
     grid-template-columns: 1fr;
     padding: var(--space-300);
   }
+
   .secondary-projects-grid {
     grid-template-columns: 1fr;
   }

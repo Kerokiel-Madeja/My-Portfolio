@@ -1,7 +1,4 @@
-/* ==========================================================================
-   Site Footer per B10 Ship Requirements
-   ========================================================================== */
-
+/* Footer */
 .site-footer {
   background-color: var(--bg-surface-800);
   border-top: 1px solid var(--bg-surface-600);
@@ -78,8 +75,8 @@
   text-decoration: none;
   font-size: 18px;
   transition: color var(--duration-hover) var(--ease-base),
-              border-color var(--duration-hover) var(--ease-base),
-              background-color var(--duration-hover) var(--ease-base);
+    border-color var(--duration-hover) var(--ease-base),
+    background-color var(--duration-hover) var(--ease-base);
 }
 
 .social-icon-btn:hover {
